@@ -40,6 +40,24 @@ const cartReducer = (state = initialState, action) => {
 			};
 		}
 
+		case INCREASE_QUANTITY: {
+			const updatedItems = state.items.map((item) =>
+				item.id === action.payload
+					? { ...item, quantity: item.quantity + 1 }
+					: item
+			);
+			return { ...state, items: updatedItems };
+		}
+
+		case DECREASE_QUANTITY: {
+			const updatedItems = state.items.map((item) =>
+				item.id === action.payload
+					? { ...item, quantity: Math.max(item.quantity - 1, 0) }
+					: item
+			);
+			return { ...state, items: updatedItems };
+		}
+
 		default:
 			return state;
 	}

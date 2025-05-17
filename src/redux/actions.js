@@ -21,3 +21,16 @@ export const removeFromCart = (productId) => {
 };
 
 // Tugas Anda menambahkan function untuk action types INCREASE_QUANTITY, DECREASE_QUANTITY
+export const increaseQuantity = (productId) => {
+	return {
+		type: INCREASE_QUANTITY,
+		payload: productId, // Kirim hanya ID produk yang kuantitasnya akan ditambah
+	};
+};
+
+export const decreaseQuantity = (productId) => {
+	return {
+		type: DECREASE_QUANTITY,
+		payload: productId, // Kirim hanya ID produk yang kuantitasnya akan dikurangi
+	};
+};
