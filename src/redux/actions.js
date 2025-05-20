@@ -1,11 +1,5 @@
-import {
-	ADD_TO_CART,
-	REMOVE_FROM_CART,
-	DECREASE_QUANTITY,
-	INCREASE_QUANTITY,
-} from "./actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
 
-// Asumsi product adalah objek dengan minimal properti 'id' dan 'name'
 export const addToCart = (product) => {
 	return {
 		type: ADD_TO_CART,
